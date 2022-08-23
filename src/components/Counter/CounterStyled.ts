@@ -10,22 +10,24 @@ export const CounterStyled = styled.ul`
   padding: 3rem;
   background-color: #243444;
 
-  & li {
+  li {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: oxanium, Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  & .counter__number {
-    border-radius: 14px;
-    color: rgba(37, 50, 66, 255);
-    background-color: rgba(255, 198, 1, 255);
-    padding: 1.5rem;
-    font-size: 2rem;
-  }
+  .counter {
+    &__number {
+      border-radius: 14px;
+      color: rgba(37, 50, 66, 255);
+      background-color: rgba(255, 198, 1, 255);
+      padding: 1.5rem;
+      font-size: 2rem;
+    }
 
-  & .counter__name {
-    color: white;
+    &__name {
+      color: white;
+    }
   }
 `;
