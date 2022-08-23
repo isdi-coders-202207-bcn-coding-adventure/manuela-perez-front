@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import limitDate from "../../data/date";
+import limitDate from "../../data/limitDate";
 import { CounterStyled } from "./CounterStyled";
 
 export interface Time {
