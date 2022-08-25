@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import limitDate from "../../data/limitDate";
+import calculateDateLeft from "../../utils/calculateDateLeft";
+
 import { CounterStyled } from "./CounterStyled";
 
 export interface Time {
@@ -18,23 +19,9 @@ const Counter = (): JSX.Element => {
   };
   const [timeDate, setTimeDate] = useState(initialTime);
 
-  const calculateDateLeft = () => {
-    const difference = +new Date(limitDate) - +new Date();
-    const timeCalculated: Time = {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      ),
-      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((difference % (1000 * 60)) / 1000),
-    };
-
-    setTimeDate(timeCalculated);
-  };
-
   useEffect(() => {
     setTimeout(() => {
-      calculateDateLeft();
+      setTimeDate(calculateDateLeft());
     }, 1000);
   });
 
